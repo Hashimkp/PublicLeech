@@ -194,12 +194,8 @@ async def call_apropriate_function(
         message_to_send += local_file_name
         message_to_send += "</a>"
         message_to_send += "\n"
-    if message_to_send != "":
-        mention_req_user = f"<a href='tg://user?id={user_id}'>Your Requested Files</a>\n\n"
-        message_to_send = mention_req_user + message_to_send
-        message_to_send = message_to_send + "\n\n" + "#uploads"
-    else:
-        message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+
+
     await sent_message_to_update_tg_p.reply_to_message.reply_text(
         text=message_to_send,
         quote=True,
